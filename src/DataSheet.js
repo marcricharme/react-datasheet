@@ -542,7 +542,7 @@ export default class DataSheet extends PureComponent {
   render () {
     const {sheetRenderer: SheetRenderer, rowRenderer: RowRenderer, cellRenderer,
       dataRenderer, valueRenderer, dataEditor, valueViewer, attributesRenderer,
-      className, overflow, data, keyFn} = this.props
+      className, overflow, data, keyFn, getClassName} = this.props
     const {forceEdit} = this.state
 
     return (
@@ -571,6 +571,7 @@ export default class DataSheet extends PureComponent {
                       selected={this.isSelected(i, j)}
                       editing={isEditing}
                       clearing={this.isClearing(i, j)}
+                      classNameExtras={getClassName && getClassName(i, j)}
                       attributesRenderer={attributesRenderer}
                       cellRenderer={cellRenderer}
                       valueRenderer={valueRenderer}

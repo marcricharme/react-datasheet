@@ -197,7 +197,8 @@ export default class DataCell extends PureComponent {
       attributesRenderer,
       selected,
       editing,
-      onKeyUp
+      onKeyUp,
+      classNameExtras
     } = this.props
     const { updated } = this.state
 
@@ -213,7 +214,8 @@ export default class DataCell extends PureComponent {
       selected && 'selected',
       editing && 'editing',
       cell.readOnly && 'read-only',
-      updated && 'updated'
+      updated && 'updated',
+      classNameExtras,
     ]
       .filter(a => a)
       .join(' ')
